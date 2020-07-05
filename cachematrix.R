@@ -2,9 +2,9 @@
 ## functions do
 
 ## Write a short comment describing this function
-
+## function used to make a CacheMatrix
 makeCacheMatrix <- function(x = matrix()) {
-	inv <- NULL
+	inv <- NULL    ## initially initialize the inverse as null
 	set <- function(Y) {
 		x<<-y
 		inv <<-NULL
@@ -17,13 +17,14 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
+## function to solve the cache
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
 	inv <- x$getInverse() 
 	if(!is.null(inv)){
-		message("getting cached data")
-		return(inv)
+		message("getting cached data")  ## displays if cache data is done
+		return(inv)   ## returning inverse matrix
 	}
 	mat <- x$get()
 	inv <- solve(mat,...)
